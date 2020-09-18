@@ -1,0 +1,24 @@
+<h1 class="mt-1 font-weight-light"> YoutAbu Video</h1>
+
+<hr/>
+<div class="card-columns">
+    <div class="card animated fadeIn" *ngFor="let vid of videos;let i = index">
+        <img [src]="vid.thumbnails.high.url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{vid.title}}</h5>
+            <p class="card-text">
+                <strong>Autor: </strong> {{vid.channelTitle}}
+            </p>
+            <p class="card-text">
+                <strong>Publicado: </strong>{{vid.publishedAt | date}}
+            </p>
+            <button (click)="mostrarVideo(vid)" type="button" class="btn btn-outline-primary btn-block"> Ver video </button>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 mb-5 text-center">
+    <div class="col">
+        <button (click)="cargarVideo()" type="button" class="btn btn-primary btn-lg"> siguiente pagina</button>
+    </div>
+</div>
